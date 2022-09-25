@@ -33,3 +33,6 @@ then
     echo "chowning $CHOWN_DIR please be patient"
     chown -R abc:abc $CHOWN_DIR
 fi
+
+# remove default.conf.sample because it is causing nginx errors
+rm -f /config/nginx/site-confs/default.conf.sample
