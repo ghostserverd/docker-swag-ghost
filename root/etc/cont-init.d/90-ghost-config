@@ -22,23 +22,23 @@ ls -lah /
 ls -lah /config
 ls -lah /nginx
 
-# copy in custom configs
-cp -a /nginx/. /config/
-rm -rf /nginx
+## copy in custom configs
+#cp -a /nginx/. /config/
+#rm -rf /nginx
 
-# generate the password file
-NGINX_USER=${NGINX_USER:-admin}
-NGINX_PASS=${NGINX_PASS:-adminadmin}
-htpasswd -b -c /config/nginx/.htpasswd $NGINX_USER $NGINX_PASS
+## generate the password file
+#NGINX_USER=${NGINX_USER:-admin}
+#NGINX_PASS=${NGINX_PASS:-adminadmin}
+#htpasswd -b -c /config/nginx/.htpasswd $NGINX_USER $NGINX_PASS
 
-# only chown the /config directory if it is not owned by abc:abc
-CHOWN_DIR=/config
-DIR_OWNER=`stat -c "%U:%G" $CHOWN_DIR`
-if [[ $DIR_OWNER != "abc:abc" ]]
-then
-    echo "chowning $CHOWN_DIR please be patient"
-    chown -R abc:abc $CHOWN_DIR
-fi
+## only chown the /config directory if it is not owned by abc:abc
+#CHOWN_DIR=/config
+#DIR_OWNER=`stat -c "%U:%G" $CHOWN_DIR`
+#if [[ $DIR_OWNER != "abc:abc" ]]
+#then
+#    echo "chowning $CHOWN_DIR please be patient"
+#    chown -R abc:abc $CHOWN_DIR
+#fi
 
-# remove default.conf.sample because it is causing nginx errors
-rm -f /config/nginx/site-confs/default.conf.sample
+## remove default.conf.sample because it is causing nginx errors
+#rm -f /config/nginx/site-confs/default.conf.sample
