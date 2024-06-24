@@ -16,6 +16,12 @@ cat <<"EOF"
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 EOF
 
+whoami
+id -g
+ls -lah /
+ls -lah /config
+ls -lah /nginx
+
 # copy in custom configs
 cp -a /nginx/. /config/
 rm -rf /nginx
