@@ -17,7 +17,7 @@ cat <<"EOF"
 EOF
 
 # copy in custom configs
-cp -r /nginx/ /config/
+cp -a /nginx/. /config/
 rm -rf /nginx
 
 # generate the password file
